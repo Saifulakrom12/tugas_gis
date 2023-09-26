@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judul Halaman Anda</title>
+    
+    
+    <link rel="stylesheet" href="leaflet.css">
+    <script src="leaflet.js"></script>
+    
+    <style>
+        
+        #map { height: 400px; }
+    </style>
+</head>
+<body>
+    
+    <div id="map"></div>
+    
+    <script>
+         
+        var map = L.map('map').setView([-8.268624, 116.552753], 11);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        
+         var mushola = L.marker([-8.285229, 116.549062]).addTo(map);
+         var sekolah = L.marker([-8.268581, 116.563911]).addTo(map);
+         var Tambakudang = L.marker([-8.280228, 116.596135]).addTo(map);
+         var Wisata = L.marker([-8.281109, 116.599160]).addTo(map);
+         var Kantordesa = L.marker([-8.262025, 116.523650]).addTo(map);
+
+         
+          mushola.bindPopup("<b>musholla</b><br>mentareng").openPopup();
+          sekolah .bindPopup("<b>SD</b><br>2 Obel Obel").openPopup();
+          Tambakudang.bindPopup("<b>Tambak</b><br>udang").openPopup();
+          Wisata.bindPopup("<b>Wisata pantai</b><br>Air sintu").openPopup();
+          Kantordesa.bindPopup("<b>Kantor desa</b><br>madayin").openPopup();
+    </script>
+</body>
+</html>
